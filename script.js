@@ -81,6 +81,21 @@
         </div>`;
     }
 
+    // Render About page
+    function renderAbout() {
+        app.innerHTML = `
+        <div class="article-detail">
+            <h1>About 007INFox</h1>
+            <div class="article-content">
+                <p><strong>007INFox</strong> is a U.S.-based digital news platform dedicated to delivering timely, accurate, and in-depth coverage of American politics, policy, and global affairs.</p>
+                <p>Founded in <strong>August 2021</strong> in <strong>Austin, Texas</strong>, 007INFox was launched by a small team of journalists and technologists who believed that independent, non-partisan reporting could thrive in a fast-changing media landscape. The company is operated by <strong>Infox Media Group LLC</strong>, a privately held Texas corporation.</p>
+                <p>From breaking political developments and military updates to social trends and technology breakthroughs, our mission is to provide readers with clear, contextualized news without sensationalism. We cover the White House, Capitol Hill, the Pentagon, and Main Street with equal rigor.</p>
+                <p>Our editorial team adheres to strict standards of verification and fairness. 007INFox does not accept government funding or partisan sponsorship; we are supported entirely by our readers and select advertising partners who share our commitment to press freedom.</p>
+                <p>Thank you for making us a part of your daily news habit.</p>
+            </div>
+        </div>`;
+    }
+
     // Route based on hash
     function handleRoute() {
         const hash = window.location.hash.slice(1); // remove '#'
@@ -94,6 +109,8 @@
         } else if (hash.startsWith('article/')) {
             const articleId = hash.replace('article/', '');
             renderArticle(articleId);
+        } else if (hash === 'about') {
+            renderAbout();
         } else {
             renderNewsList();
         }
@@ -102,7 +119,7 @@
     window.addEventListener('hashchange', handleRoute);
     window.addEventListener('load', handleRoute);
 
-    // Highlight active nav link (optional)
+    // Highlight active nav link
     function updateActiveLink() {
         const hash = window.location.hash;
         document.querySelectorAll('#main-nav a').forEach(link => {

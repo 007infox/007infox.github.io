@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Economy | 007 INFOX</title>
+
+<meta name="description" content="The latest U.S. economy, business, markets and economic policy news from 007 INFOX.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    color: #151515;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.topbar {
+    height: 92px;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    font-weight: 400;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #777;
+    margin-top: 2px;
+}
+
+/* NAVIGATION */
+
+.nav {
+    border-top: 1px solid #eeeeee;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.nav a {
+    display: block;
+    padding: 15px 21px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav a:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+.nav a.active {
+    background: #111111;
+    color: #ffffff;
+}
+
+/* BREAKING NEWS */
+
+.breaking {
+    background: #111111;
+    color: #ffffff;
+}
+
+.breaking-inner {
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 13px;
+}
+
+.breaking-label {
+    background: #c90000;
+    padding: 4px 9px;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: .5px;
+}
+
+/* MAIN */
+
+main {
+    padding: 40px 0 70px;
+}
+
+/* PAGE HEADING */
+
+.page-heading {
+    border-bottom: 3px solid #111111;
+    margin-bottom: 28px;
+}
+
+.page-heading h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 42px;
+    line-height: 1.2;
+    padding-bottom: 12px;
+}
+
+.page-heading p {
+    color: #777777;
+    font-size: 14px;
+    padding-bottom: 18px;
+}
+
+/* FEATURED */
+
+.featured {
+    background: #ffffff;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    border: 1px solid #dddddd;
+    margin-bottom: 40px;
+}
+
+.featured-image {
+    min-height: 360px;
+    background:
+        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.35)),
+        linear-gradient(135deg, #777777, #222222);
+}
+
+.featured-content {
+    padding: 35px;
+}
+
+.category {
+    font-size: 10px;
+    font-weight: 700;
+    color: #777777;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.featured h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.featured p {
+    color: #666666;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.meta {
+    color: #888888;
+    font-size: 12px;
+}
+
+/* NEWS SECTION */
+
+.news-section {
+    margin-top: 40px;
+}
+
+.news-section h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    border-bottom: 3px solid #111111;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.empty-news {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 55px 30px;
+    text-align: center;
+    color: #777777;
+}
+
+.empty-news h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.empty-news p {
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #111111;
+    color: #ffffff;
+    padding: 35px 0;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.footer-text {
+    color: #888888;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    font-size: 12px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .topbar {
+        height: 75px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .nav a {
+        padding: 13px 15px;
+        font-size: 13px;
+    }
+
+    .page-heading h1 {
+        font-size: 34px;
+    }
+
+    .featured {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        min-height: 230px;
+    }
+
+    .featured-content {
+        padding: 25px;
+    }
+
+    .featured h2 {
+        font-size: 28px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="container topbar">
+
+        <div>
+
+            <a href="index.html">
+
+                <div class="logo">
+                    007 <span>INFOX</span>
+                </div>
+
+            </a>
+
+            <div class="tagline">
+                Independent U.S. News
+            </div>
+
+        </div>
+
+    </div>
+
+    <nav class="nav">
+
+        <div class="container nav-inner">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="politics.html">
+                Politics
+            </a>
+
+            <a href="military.html">
+                Military
+            </a>
+
+            <a href="society.html">
+                Society
+            </a>
+
+            <a href="economy.html" class="active">
+                Economy
+            </a>
+
+            <a href="#">
+                Law
+            </a>
+
+            <a href="#">
+                Technology
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+<div class="breaking">
+
+    <div class="container breaking-inner">
+
+        <span class="breaking-label">
+            BREAKING
+        </span>
+
+        <span>
+            Latest developments in the United States
+        </span>
+
+    </div>
+
+</div>
+
+<main>
+
+<div class="container">
+
+    <div class="page-heading">
+
+        <h1>
+            Economy
+        </h1>
+
+        <p>
+            The latest news and developments in the U.S. economy,
+            business, markets and economic policy.
+        </p>
+
+    </div>
+
+    <section class="featured">
+
+        <div class="featured-image">
+        </div>
+
+        <div class="featured-content">
+
+            <div class="category">
+                Economy
+            </div>
+
+            <h2>
+                Stories Shaping the U.S. Economy
+            </h2>
+
+            <p>
+                Coverage of economic policy, business, financial markets,
+                employment, inflation and major developments affecting
+                the American economy.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="news-section">
+
+        <h2>
+            Latest Economy News
+        </h2>
+
+        <div class="empty-news">
+
+            <h3>
+                No stories published yet
+            </h3>
+
+            <p>
+                New economic and business coverage
+                will appear here.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+</main>
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <div>
+
+            <div class="footer-logo">
+                007 INFOX
+            </div>
+
+            <div class="footer-text">
+                Independent U.S. News
+            </div>
+
+        </div>
+
+        <div class="footer-links">
+
+            <a href="index.html">
+主页
+            </a>
+
+            <a href="#">
+关于
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <span>
+                © 2026 007 INFOX
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

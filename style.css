@@ -1,12 +1,12 @@
-/* === RESET & BASE === */
+/* Global Reset & Basic Settings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #f0f2f5;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
     color: #1a1a1a;
     line-height: 1.6;
     display: flex;
@@ -21,10 +21,10 @@ ul {
     list-style: none;
 }
 
-/* === HEADER === */
+/* Top Header Navigation Bar */
 header {
-    background: #0a1f44;
-    color: #fff;
+    background-color: #0a1f44;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,7 +40,7 @@ header {
     line-height: 0;
 }
 .logo img {
-    height: 44px;
+    height: 46px;
     width: auto;
     display: block;
 }
@@ -49,26 +49,26 @@ header {
     gap: 1.2rem;
 }
 #main-nav a {
-    color: #ccc;
+    color: #cccccc;
     font-weight: 500;
     transition: color 0.2s;
     font-size: 0.95rem;
 }
 #main-nav a:hover,
 #main-nav a.active {
-    color: #fff;
+    color: #ffffff;
     border-bottom: 2px solid #c62828;
 }
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: #fff;
+    color: #ffffff;
     font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* === MAIN === */
+/* Main Page Container */
 main {
     flex: 1;
     padding: 2rem 2rem 1rem;
@@ -77,7 +77,7 @@ main {
     width: 100%;
 }
 
-/* === NEWS LIST === */
+/* News Card Layout */
 .news-list h2 {
     margin-bottom: 1.5rem;
     font-size: 2rem;
@@ -91,11 +91,11 @@ main {
     gap: 1.5rem;
 }
 .news-card {
-    background: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box‑shadow 0.2s;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -108,7 +108,7 @@ main {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    background: #dcdcdc;
+    background-color: #dcdcdc;
 }
 .card-body {
     padding: 1rem;
@@ -118,8 +118,8 @@ main {
 }
 .card-category {
     display: inline-block;
-    background: #0a1f44;
-    color: #fff;
+    background-color: #0a1f44;
+    color: #ffffff;
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -137,18 +137,18 @@ main {
 }
 .card-date {
     font-size: 0.8rem;
-    color: #777;
+    color: #777777;
     margin-bottom: 0.5rem;
 }
 .card-summary {
     font-size: 0.9rem;
-    color: #444;
+    color: #444444;
     flex: 1;
 }
 
-/* === ARTICLE DETAIL === */
+/* Single News Article Page */
 .article-detail {
-    background: #fff;
+    background-color: #ffffff;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -169,8 +169,8 @@ main {
     text-decoration: underline;
 }
 .article-detail .category-badge {
-    background: #c62828;
-    color: #fff;
+    background-color: #c62828;
+    color: #ffffff;
     padding: 0.2rem 0.8rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -185,30 +185,30 @@ main {
     line-height: 1.3;
 }
 .article-detail .date {
-    color: #888;
+    color: #888888;
     margin-bottom: 1.5rem;
     font-size: 0.9rem;
 }
 .article-content {
     font-size: 1rem;
     line-height: 1.8;
-    color: #333;
+    color: #333333;
 }
 .article-content p {
     margin-bottom: 1.2rem;
 }
 
-/* === FOOTER === */
+/* Website Footer */
 footer {
-    background: #0a1f44;
-    color: #aaa;
+    background-color: #0a1f44;
+    color: #aaaaaa;
     text-align: center;
     padding: 1rem;
     font-size: 0.85rem;
     margin-top: 2rem;
 }
 
-/* === RESPONSIVE === */
+/* Mobile‑Friendly Layout */
 @media (max-width: 768px) {
     header {
         padding: 0.8rem 1rem;

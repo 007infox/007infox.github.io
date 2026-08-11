@@ -9,7 +9,7 @@
     function getSortedNews() {
         return [...window.newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
     }
-    // 关键修改：trump → president，页面分类标题显示President
+    // 分类名称（美式英文，已经彻底移除Trump）
     const categoryNames = {
         president: 'President',
         politics: 'Politics',
@@ -73,7 +73,7 @@
             '<h1>About 007INFox</h1>' +
             '<div class="article-content">' +
             '<p><strong>007INFox</strong> is a U.S.-based digital news platform dedicated to delivering timely, accurate, and in-depth coverage of American politics, policy, and global affairs.</p>' +
-            '<p>Founded in <strong>August 2021</strong> in <strong>Austin, Texas</strong>, 007INFox was launched by a small team of journalists and technologists who believed that independent, non-partisan reporting could thrive in a fast-changing media landscape. The company is operated by <strong>Infox Media Group LLC</strong>, a privately held Texas corporation.</p>' +
+            '<p>Founded in <strong>August 2021</strong> in <strong>Austin, Texas</strong>, 007INFox was launched by a small team of journalists and technologists who believed that independent, non‑partisan reporting could thrive in a fast‑changing media landscape. The company is operated by <strong>Infox Media Group LLC</strong>, a privately held Texas corporation.</p>' +
             '<p>From breaking political developments and military updates to social trends and technology breakthroughs, our mission is to provide readers with clear, contextualized news without sensationalism. We cover the White House, Capitol Hill, the Pentagon, and Main Street with equal rigor.</p>' +
             '<p>Our editorial team adheres to strict standards of verification and fairness. 007INFox does not accept government funding or partisan sponsorship; we are supported entirely by our readers and select advertising partners who share our commitment to press freedom.</p>' +
             '<p>Thank you for making us a part of your daily news habit.</p>' +

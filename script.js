@@ -2,18 +2,16 @@
     const app = document.getElementById('app');
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.getElementById('main-nav');
-
     // 移动端菜单
     menuToggle.addEventListener('click', () => {
         mainNav.classList.toggle('open');
     });
-
     function getSortedNews() {
         return [...window.newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
     }
-
+    // 关键修改：trump → president，页面分类标题显示President
     const categoryNames = {
-        trump: 'Trump',
+        president: 'President',
         politics: 'Politics',
         military: 'Military',
         diplomacy: 'Diplomacy',
@@ -21,7 +19,6 @@
         economy: 'Economy',
         technology: 'Technology'
     };
-
     function renderNewsList(category) {
         var news = getSortedNews();
         if (category) {
@@ -48,14 +45,12 @@
         }
         html += '</div></div>';
         app.innerHTML = html;
-
         document.querySelectorAll('.news-card').forEach(function(card) {
             card.addEventListener('click', function() {
                 window.location.hash = '#article/' + this.dataset.id;
             });
         });
     }
-
     function renderArticle(id) {
         var news = getSortedNews();
         var article = news.find(function(item) { return item.id == id; });
@@ -73,7 +68,6 @@
             '<div class="article-content">' + article.content + '</div>' +
             '</div>';
     }
-
     function renderAbout() {
         var html = '<div class="article-detail">' +
             '<h1>About 007INFox</h1>' +
@@ -86,11 +80,9 @@
             '</div></div>';
         app.innerHTML = html;
     }
-
     function handleRoute() {
         var hash = window.location.hash.slice(1);
         mainNav.classList.remove('open');
-
         if (!hash || hash === 'home') {
             renderNewsList();
         } else if (hash.startsWith('category/')) {
@@ -105,10 +97,8 @@
             renderNewsList();
         }
     }
-
     window.addEventListener('hashchange', handleRoute);
     window.addEventListener('load', handleRoute);
-
     function updateActiveLink() {
         var hash = window.location.hash;
         document.querySelectorAll('#main-nav a').forEach(function(link) {

@@ -3,39 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>007INFox - US News</title>
-    <!-- Logo icon for browser tab -->
+    <meta name="description" content="007INFox - American News Network. Breaking news, politics, military, economy, and more.">
+    <title>007INFox - American News Network</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <!-- Logo: clicking it returns to home -->
-        <a href="#home" class="logo-link" aria-label="007INFox - Go to Home">
-            <img src="logo.png"
-                 srcset="logo@2x.png 2x"
-                 alt="007INFox"
-                 class="logo-img">
-        </a>
-        <nav id="main-nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#category/trump">Trump</a></li>
-                <li><a href="#category/politics">Politics</a></li>
-                <li><a href="#category/military">Military</a></li>
-                <li><a href="#category/diplomacy">Diplomacy</a></li>
-                <li><a href="#category/society">Society</a></li>
-                <li><a href="#category/economy">Economy</a></li>
-                <li><a href="#category/technology">Technology</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <div class="header-inner">
+            <a href="#home" class="logo-link" aria-label="007INFox - Go to Home">
+                <img src="logo.png"
+                     srcset="logo@2x.png 2x"
+                     alt="007INFox"
+                     class="logo-img">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active" data-category="home">Home</a></li>
+                    <li><a href="#trump" class="nav-link" data-category="trump">Trump</a></li>
+                    <li><a href="#politics" class="nav-link" data-category="politics">Politics</a></li>
+                    <li><a href="#military" class="nav-link" data-category="military">Military</a></li>
+                    <li><a href="#diplomacy" class="nav-link" data-category="diplomacy">Diplomacy</a></li>
+                    <li><a href="#society" class="nav-link" data-category="society">Society</a></li>
+                    <li><a href="#economy" class="nav-link" data-category="economy">Economy</a></li>
+                    <li><a href="#technology" class="nav-link" data-category="technology">Technology</a></li>
+                    <li><a href="#about" class="nav-link" data-category="about">About</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        </div>
     </header>
-    <main id="app"></main>
+
+    <main id="main-content">
+        <!-- Content rendered by script.js -->
+    </main>
+
     <footer>
-        <p>© 2026 007INFox. All rights reserved.</p>
+        <div class="footer-inner">
+            <p>&copy; 2026 007INFox News Network. All rights reserved.</p>
+            <p class="footer-tagline">Delivering the truth, 007 ways.</p>
+        </div>
     </footer>
+
     <script src="news.js"></script>
     <script src="script.js"></script>
 </body>

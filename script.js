@@ -1,123 +1,227 @@
-(function() {
-    const app = document.getElementById('app');
+/**
+ * 007INFox News Website - Main Script
+ * Handles routing, news rendering, category filtering, and mobile menu
+ */
+
+(function () {
+    'use strict';
+
+    // --- DOM References ---
+    const mainContent = document.getElementById('main-content');
+    const navLinks = document.querySelectorAll('.nav-link');
     const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.getElementById('main-nav');
+    const nav = document.querySelector('nav');
 
-    // 移动端菜单
-    menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
-    });
-
-    function getSortedNews() {
-        return [...window.newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+    // --- Utility: Get category from URL hash ---
+    function getCategoryFromHash() {
+        const hash = window.location.hash.replace('#', '').toLowerCase();
+        const validCategories = ['home', 'trump', 'politics', 'military', 'diplomacy', 'society', 'economy', 'technology', 'about'];
+        return validCategories.includes(hash) ? hash : 'home';
     }
 
-    const categoryNames = {
-        trump: 'Trump',
-        politics: 'Politics',
-        military: 'Military',
-        diplomacy: 'Diplomacy',
-        society: 'Society',
-        economy: 'Economy',
-        technology: 'Technology'
-    };
+    // --- Utility: Format date ---
+    function formatDate(dateStr) {
+        const d = new Date(dateStr);
+        return d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    }
 
-    function renderNewsList(category) {
-        var news = getSortedNews();
-        if (category) {
-            news = news.filter(function(item) {
-                return item.category === category;
-            });
-        }
-        var title = category ? (categoryNames[category] || 'News') : 'Latest News';
-        var html = '<div class="news-list"><h2>' + title + '</h2><div class="news-grid">';
-        if (news.length === 0) {
-            html += '<p>No news articles found in this category.</p>';
+    // --- Utility: Category display name ---
+    function categoryName(cat) {
+        const names = {
+            trump: 'Trump',
+            politics: 'Politics',
+            military: 'Military',
+            diplomacy: 'Diplomacy',
+            society: 'Society',
+            economy: 'Economy',
+            technology: 'Technology'
+        };
+        return names[cat] || cat;
+    }
+
+    // --- Render: Home page with featured + grid ---
+    function renderHome(category) {
+        let articles;
+        if (category && category !== 'home') {
+            articles = window.newsData.filter(a => a.category === category);
         } else {
-            news.forEach(function(item) {
-                var imgSrc = item.image || ('https://picsum.photos/400/200?random=' + item.id);
-                html += '<div class="news-card" data-id="' + item.id + '">' +
-                    '<img class="card-img" src="' + imgSrc + '" alt="' + item.title + '" loading="lazy">' +
-                    '<div class="card-body">' +
-                    '<span class="card-category">' + (categoryNames[item.category] || item.category) + '</span>' +
-                    '<h3 class="card-title">' + item.title + '</h3>' +
-                    '<div class="card-date">' + item.date + '</div>' +
-                    '<p class="card-summary">' + item.summary + '</p>' +
-                    '</div></div>';
-            });
+            articles = [...window.newsData];
         }
-        html += '</div></div>';
-        app.innerHTML = html;
 
-        document.querySelectorAll('.news-card').forEach(function(card) {
-            card.addEventListener('click', function() {
-                window.location.hash = '#article/' + this.dataset.id;
-            });
-        });
-    }
+        // Sort by date descending
+        articles.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    function renderArticle(id) {
-        var news = getSortedNews();
-        var article = news.find(function(item) { return item.id == id; });
-        if (!article) {
-            app.innerHTML = '<div class="article-detail"><p>Article not found. <a href="#home">Go back home</a></p></div>';
+        if (articles.length === 0) {
+            mainContent.innerHTML = `
+                <div class="no-news">
+                    <h2>No articles found in this category.</h2>
+                    <a href="#home" class="back-link">← Back to Home</a>
+                </div>`;
             return;
         }
-        var imgSrc = article.image || ('https://picsum.photos/800/300?random=' + article.id);
-        app.innerHTML = '<div class="article-detail">' +
-            '<button class="back-btn" onclick="window.location.hash=\'#home\'">← Back to Home</button>' +
-            '<span class="category-badge">' + (categoryNames[article.category] || article.category) + '</span>' +
-            '<h1>' + article.title + '</h1>' +
-            '<div class="date">' + article.date + '</div>' +
-            '<img src="' + imgSrc + '" alt="' + article.title + '" style="width:100%;max-height:400px;object-fit:cover;border-radius:8px;margin-bottom:1.5rem;">' +
-            '<div class="article-content">' + article.content + '</div>' +
-            '</div>';
-    }
 
-    function renderAbout() {
-        var html = '<div class="article-detail">' +
-            '<h1>About 007INFox</h1>' +
-            '<div class="article-content">' +
-            '<p><strong>007INFox</strong> is a U.S.-based digital news platform dedicated to delivering timely, accurate, and in-depth coverage of American politics, policy, and global affairs.</p>' +
-            '<p>Founded in <strong>August 2021</strong> in <strong>Austin, Texas</strong>, 007INFox was launched by a small team of journalists and technologists who believed that independent, non-partisan reporting could thrive in a fast-changing media landscape. The company is operated by <strong>Infox Media Group LLC</strong>, a privately held Texas corporation.</p>' +
-            '<p>From breaking political developments and military updates to social trends and technology breakthroughs, our mission is to provide readers with clear, contextualized news without sensationalism. We cover the White House, Capitol Hill, the Pentagon, and Main Street with equal rigor.</p>' +
-            '<p>Our editorial team adheres to strict standards of verification and fairness. 007INFox does not accept government funding or partisan sponsorship; we are supported entirely by our readers and select advertising partners who share our commitment to press freedom.</p>' +
-            '<p>Thank you for making us a part of your daily news habit.</p>' +
-            '</div></div>';
-        app.innerHTML = html;
-    }
+        const featured = articles[0];
+        const rest = articles.slice(1);
 
-    function handleRoute() {
-        var hash = window.location.hash.slice(1);
-        mainNav.classList.remove('open');
+        let html = '';
 
-        if (!hash || hash === 'home') {
-            renderNewsList();
-        } else if (hash.startsWith('category/')) {
-            var category = hash.replace('category/', '');
-            renderNewsList(category);
-        } else if (hash.startsWith('article/')) {
-            var articleId = hash.replace('article/', '');
-            renderArticle(articleId);
-        } else if (hash === 'about') {
-            renderAbout();
+        // Section title
+        if (category && category !== 'home') {
+            html += `<h2 class="section-title">${categoryName(category)}</h2>`;
         } else {
-            renderNewsList();
+            html += `<h2 class="section-title">Latest News</h2>`;
         }
+
+        // Featured hero article
+        html += `
+            <article class="hero-article" data-id="${featured.id}">
+                <div class="hero-image">
+                    <img src="${featured.image}" alt="${escapeHtml(featured.title)}" loading="lazy">
+                </div>
+                <div class="hero-body">
+                    <div class="hero-category">${categoryName(featured.category)}</div>
+                    <h1 class="hero-title">${escapeHtml(featured.title)}</h1>
+                    <p class="hero-summary">${escapeHtml(featured.summary)}</p>
+                    <div class="card-date">${formatDate(featured.date)}</div>
+                </div>
+            </article>
+        `;
+
+        // News grid
+        if (rest.length > 0) {
+            html += `<div class="news-grid">`;
+            rest.forEach(article => {
+                html += `
+                    <article class="news-card" data-id="${article.id}">
+                        <div class="card-image">
+                            <img src="${article.image}" alt="${escapeHtml(article.title)}" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category">${categoryName(article.category)}</div>
+                            <h3 class="card-title">${escapeHtml(article.title)}</h3>
+                            <p class="card-summary">${escapeHtml(article.summary)}</p>
+                            <div class="card-date">${formatDate(article.date)}</div>
+                        </div>
+                    </article>
+                `;
+            });
+            html += `</div>`;
+        }
+
+        mainContent.innerHTML = html;
+
+        // Attach click handlers
+        attachArticleClickHandlers();
     }
 
-    window.addEventListener('hashchange', handleRoute);
-    window.addEventListener('load', handleRoute);
+    // --- Render: Single article detail ---
+    function renderArticle(articleId) {
+        const article = window.newsData.find(a => a.id === parseInt(articleId));
+        if (!article) {
+            renderHome();
+            return;
+        }
 
-    function updateActiveLink() {
-        var hash = window.location.hash;
-        document.querySelectorAll('#main-nav a').forEach(function(link) {
+        const paragraphs = article.content.split('\n\n').map(p => `<p>${escapeHtml(p)}</p>`).join('');
+
+        const html = `
+            <div class="article-detail">
+                <a href="#home" class="back-link">← Back to News</a>
+                <div class="article-hero">
+                    <img src="${article.image}" alt="${escapeHtml(article.title)}">
+                </div>
+                <div class="article-body">
+                    <div class="article-category">${categoryName(article.category)}</div>
+                    <h1 class="article-title">${escapeHtml(article.title)}</h1>
+                    <div class="article-date">${formatDate(article.date)}</div>
+                    <div class="article-content">
+                        ${paragraphs}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        mainContent.innerHTML = html;
+        window.scrollTo(0, 0);
+    }
+
+    // --- Render: About page ---
+    function renderAbout() {
+        const html = `
+            <div class="about-page">
+                <h1>About 007INFox</h1>
+                <p>007INFox is an American news network dedicated to delivering bold, unfiltered journalism across politics, military affairs, the economy, technology, and society.</p>
+                <p>Founded on the principle that the American people deserve transparent, fearless reporting, 007INFox operates independently of corporate and political influence. Our team of veteran journalists and analysts works around the clock to bring you the stories that matter.</p>
+                <p>From the corridors of power in Washington to the frontlines of global conflict, 007INFox is your window into the forces shaping America and the world.</p>
+                <p><strong>Contact:</strong> tips@007infox.news</p>
+            </div>
+        `;
+        mainContent.innerHTML = html;
+    }
+
+    // --- Router ---
+    function router() {
+        const hash = window.location.hash;
+
+        // Update active nav link
+        navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href') === hash) {
+            if (link.getAttribute('href') === hash || (hash === '' && link.dataset.category === 'home')) {
                 link.classList.add('active');
             }
         });
+
+        // Close mobile menu on navigation
+        nav.classList.remove('open');
+
+        // Route
+        if (hash.startsWith('#article-')) {
+            const id = hash.replace('#article-', '');
+            renderArticle(id);
+        } else if (hash === '#about') {
+            renderAbout();
+        } else {
+            const category = getCategoryFromHash();
+            renderHome(category === 'home' ? null : category);
+        }
     }
-    window.addEventListener('hashchange', updateActiveLink);
-    window.addEventListener('load', updateActiveLink);
+
+    // --- Click handlers for articles ---
+    function attachArticleClickHandlers() {
+        const clickable = mainContent.querySelectorAll('.news-card, .hero-article');
+        clickable.forEach(el => {
+            el.addEventListener('click', () => {
+                const id = el.dataset.id;
+                window.location.hash = `article-${id}`;
+            });
+        });
+    }
+
+    // --- Utility: Escape HTML ---
+    function escapeHtml(str) {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    // --- Mobile menu toggle ---
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    }
+
+    // --- Nav link click: close mobile menu ---
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('open');
+        });
+    });
+
+    // --- Hash change listener ---
+    window.addEventListener('hashchange', router);
+
+    // --- Initial render ---
+    router();
+
 })();

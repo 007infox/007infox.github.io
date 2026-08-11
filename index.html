@@ -4,22 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>007 Infox | U.S. News</title>
-
-<meta name="description" content="Independent coverage of politics, military, society, economy, law and technology in the United States.">
+<title>Economy | 007 INFOX</title>
 
 <style>
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
     background: #f7f7f7;
-    color: #151515;
-    line-height: 1.6;
+    color: #111;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
@@ -27,352 +24,296 @@ a {
     text-decoration: none;
 }
 
-.container {
-    width: min(1180px, 92%);
-    margin: 0 auto;
-}
-
-/* Header */
+/* HEADER */
 
 header {
-    background: #ffffff;
-    border-bottom: 1px solid #d9d9d9;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.topbar {
-    height: 92px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-inner {
+    max-width: 1280px;
+    margin: auto;
+    padding: 22px 0 16px;
 }
 
 .logo {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 34px;
+    font-size: 42px;
     font-weight: 700;
-    letter-spacing: -1px;
-}
-
-.logo span {
-    font-weight: 400;
+    letter-spacing: -2px;
 }
 
 .tagline {
-    font-size: 12px;
+    margin-top: 8px;
     color: #777;
-    margin-top: 2px;
+    font-size: 14px;
 }
 
-.nav {
-    border-top: 1px solid #eeeeee;
+/* NAVIGATION */
+
+nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
 }
 
 .nav-inner {
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     align-items: center;
-    overflow-x: auto;
 }
 
-.nav a {
-    display: block;
-    padding: 15px 21px;
-    font-size: 14px;
-    font-weight: 700;
-    white-space: nowrap;
+.nav-inner a {
+    padding: 20px 27px;
+    font-size: 17px;
+    font-weight: 600;
 }
 
-.nav a:hover {
+.nav-inner a:hover {
     background: #111;
-    color: white;
+    color: #fff;
 }
 
-/* Breaking News */
+.nav-inner a.active {
+    background: #111;
+    color: #fff;
+}
+
+/* BREAKING BAR */
 
 .breaking {
     background: #111;
-    color: white;
+    color: #fff;
 }
 
 .breaking-inner {
-    min-height: 42px;
+    max-width: 1280px;
+    margin: auto;
+    height: 52px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-size: 13px;
+    gap: 18px;
 }
 
 .breaking-label {
-    background: #c90000;
-    padding: 4px 9px;
+    background: #e00000;
+    padding: 8px 14px;
+    font-size: 13px;
     font-weight: 700;
-    font-size: 11px;
-    letter-spacing: .5px;
 }
 
-/* Main */
+/* MAIN */
 
-main {
-    padding: 35px 0 60px;
-}
-
-.section-label {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #777;
-    margin-bottom: 12px;
-}
-
-.hero {
-    background: white;
-    border-bottom: 1px solid #ddd;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    margin-bottom: 40px;
-}
-
-.hero-image {
-    min-height: 390px;
-    background:
-        linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.35)),
-        linear-gradient(135deg, #777, #222);
-    display: flex;
-    align-items: flex-end;
-    padding: 30px;
-    color: white;
-}
-
-.hero-image-text {
-    font-size: 12px;
-    opacity: .8;
-}
-
-.hero-content {
-    padding: 38px;
-}
-
-.hero-content h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 42px;
-    line-height: 1.12;
-    margin-bottom: 18px;
-}
-
-.hero-content p {
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 22px;
-}
-
-.meta {
-    color: #888;
-    font-size: 12px;
-}
-
-/* Section grids */
-
-.section {
-    margin-bottom: 45px;
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 52px 0 80px;
 }
 
 .section-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid #111;
-    margin-bottom: 20px;
-}
-
-.section-title h2 {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 26px;
+    font-size: 52px;
+    margin: 0 0 15px;
 }
 
-.section-title a {
-    font-size: 12px;
+.section-description {
+    color: #68717a;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.section-line {
+    height: 3px;
+    background: #111;
+    margin-bottom: 34px;
+}
+
+/* FEATURE */
+
+.feature {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    min-height: 410px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.feature-image {
+    background:
+        linear-gradient(
+            135deg,
+            #777 0%,
+            #555 45%,
+            #222 100%
+        );
+}
+
+.feature-content {
+    padding: 48px 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.category {
+    font-size: 13px;
     font-weight: 700;
+    color: #777;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.feature-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 39px;
+    line-height: 1.18;
+    margin: 0 0 20px;
+}
+
+.feature-description {
     color: #666;
+    font-size: 18px;
+    line-height: 1.55;
+    margin-bottom: 28px;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+}
+
+/* LATEST NEWS */
+
+.latest {
+    margin-top: 48px;
+}
+
+.latest-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    border-bottom: 3px solid #111;
+    padding-bottom: 14px;
+    margin-bottom: 25px;
 }
 
 .news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 25px;
 }
 
-.card {
-    background: white;
+.news-card {
+    background: #fff;
     border: 1px solid #ddd;
 }
 
-.card-image {
-    height: 170px;
-    background: linear-gradient(135deg, #8b8b8b, #292929);
+.news-image {
+    height: 180px;
+    background:
+        linear-gradient(
+            135deg,
+            #777,
+            #292929
+        );
 }
 
-.card-content {
-    padding: 20px;
+.news-content {
+    padding: 24px;
 }
 
-.category {
-    font-size: 10px;
+.news-category {
+    font-size: 12px;
     font-weight: 700;
     color: #777;
     letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 7px;
-}
-
-.card h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    line-height: 1.25;
-    margin-bottom: 10px;
-}
-
-.card p {
-    color: #777;
-    font-size: 13px;
-}
-
-/* Latest */
-
-.latest {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 35px;
-}
-
-.latest-list {
-    background: white;
-}
-
-.latest-item {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-}
-
-.latest-item:last-child {
-    border-bottom: none;
-}
-
-.latest-item h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 20px;
-    line-height: 1.3;
-    margin: 4px 0 7px;
-}
-
-.latest-item p {
-    color: #777;
-    font-size: 13px;
-}
-
-/* About box */
-
-.about-box {
-    background: #111;
-    color: white;
-    padding: 30px;
-}
-
-.about-box h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 25px;
     margin-bottom: 12px;
 }
 
-.about-box p {
-    color: #bbb;
-    font-size: 14px;
+.news-title {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    line-height: 1.25;
+    margin: 0 0 14px;
 }
 
-/* Footer */
+.news-summary {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.news-date {
+    color: #888;
+    font-size: 13px;
+    margin-top: 18px;
+}
+
+/* FOOTER */
 
 footer {
     background: #111;
-    color: white;
-    padding: 35px 0;
+    color: #fff;
+    padding: 40px 0;
 }
 
 .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    max-width: 1280px;
+    margin: auto;
 }
 
 .footer-logo {
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
 }
 
 .footer-text {
-    color: #888;
-    font-size: 12px;
-    margin-top: 6px;
+    color: #aaa;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-.footer-links {
-    display: flex;
-    gap: 20px;
-    font-size: 12px;
-}
+/* MOBILE */
 
-/* Mobile */
+@media (max-width: 900px) {
 
-@media (max-width: 800px) {
-
-    .topbar {
-        height: 75px;
+    .header-inner,
+    .nav-inner,
+    .breaking-inner,
+    .container,
+    .footer-inner {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    .logo {
-        font-size: 27px;
+    .nav-inner {
+        overflow-x: auto;
     }
 
-    .tagline {
-        display: none;
+    .nav-inner a {
+        padding: 16px 18px;
+        white-space: nowrap;
     }
 
-    .nav a {
-        padding: 13px 15px;
-        font-size: 13px;
-    }
-
-    .hero {
+    .feature {
         grid-template-columns: 1fr;
     }
 
-    .hero-image {
-        min-height: 230px;
-    }
-
-    .hero-content {
-        padding: 25px;
-    }
-
-    .hero-content h1 {
-        font-size: 31px;
+    .feature-image {
+        min-height: 280px;
     }
 
     .news-grid {
         grid-template-columns: 1fr;
     }
 
-    .latest {
-        grid-template-columns: 1fr;
+    .section-title {
+        font-size: 42px;
     }
 
-    .footer-inner {
-        flex-direction: column;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-    }
 }
+
 </style>
 </head>
 
@@ -380,65 +321,95 @@ footer {
 
 <header>
 
-    <div class="container topbar">
-        <div>
-            <div class="logo">007 <span>INFOX</span></div>
-            <div class="tagline">Independent U.S. News</div>
-        </div>
-    </div>
+    <div class="header-inner">
 
-    <nav class="nav">
-        <div class="container nav-inner">
-            <a href="#">Home</a>
-            <a href="#politics">Politics</a>
-            <a href="#military">Military</a>
-            <a href="#society">Society</a>
-            <a href="#economy">Economy</a>
-            <a href="#law">Law</a>
-            <a href="#technology">Technology</a>
-            <a href="#about">About</a>
+        <div class="logo">
+            007 INFOX
         </div>
-    </nav>
+
+        <div class="tagline">
+            Independent U.S. News
+        </div>
+
+    </div>
 
 </header>
 
-<div class="breaking">
-    <div class="container breaking-inner">
-        <span class="breaking-label">BREAKING</span>
-        <span>Latest developments in the United States</span>
+
+<nav>
+
+    <div class="nav-inner">
+
+        <a href="index.html">Home</a>
+
+        <a href="#">Politics</a>
+
+        <a href="#">Military</a>
+
+        <a href="#">Society</a>
+
+        <a href="#" class="active">Economy</a>
+
+        <a href="#">Law</a>
+
+        <a href="#">Technology</a>
+
+        <a href="#">关于</a>
+
     </div>
-</div>
 
-<main>
+</nav>
 
-<div class="container">
 
-    <!-- HERO -->
+<div class="breaking">
 
-    <div class="section-label">Top Story</div>
+    <div class="breaking-inner">
 
-    <section class="hero">
-
-        <div class="hero-image">
-            <div class="hero-image-text">
-                Featured Story
-            </div>
+        <div class="breaking-label">
+            BREAKING
         </div>
 
-        <div class="hero-content">
+        <div>
+            Latest developments in the United States
+        </div>
 
-            <div class="category">Politics</div>
+    </div>
 
-            <h1>
-                U.S. Politics Enters a New Phase as Washington Faces Major Policy Debates
-            </h1>
+</div>
 
-            <p>
-                A closer look at the latest developments in Washington,
-                the political forces shaping the debate, and what could come next.
+
+<main class="container">
+
+    <h1 class="section-title">
+        Economy
+    </h1>
+
+    <div class="section-description">
+        Coverage of the U.S. economy, markets, business, trade, employment and economic policy.
+    </div>
+
+    <div class="section-line"></div>
+
+
+    <section class="feature">
+
+        <div class="feature-image"></div>
+
+        <div class="feature-content">
+
+            <div class="category">
+                ECONOMY
+            </div>
+
+            <h2 class="feature-title">
+                U.S. Economy Faces New Questions Over Growth and Federal Policy
+            </h2>
+
+            <p class="feature-description">
+                Businesses, markets and policymakers are closely watching economic conditions as Washington debates the direction of federal policy.
             </p>
 
-            <div class="meta">
+            <div class="date">
                 August 11, 2026 · 10:30 AM ET
             </div>
 
@@ -447,339 +418,114 @@ footer {
     </section>
 
 
-    <!-- POLITICS -->
+    <section class="latest">
 
-    <section class="section" id="politics">
+        <h2 class="latest-title">
+            Latest Economy News
+        </h2>
 
-        <div class="section-title">
-            <h2>Politics</h2>
-            <a href="#">View All →</a>
-        </div>
 
         <div class="news-grid">
 
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Politics</div>
-                    <h3>Washington Faces New Debate Over Federal Policy</h3>
-                    <p>Political leaders weigh competing approaches as a major policy discussion develops.</p>
+
+            <article class="news-card">
+
+                <div class="news-image"></div>
+
+                <div class="news-content">
+
+                    <div class="news-category">
+                        MARKETS
+                    </div>
+
+                    <h3 class="news-title">
+                        Markets Watch New Signals From Washington
+                    </h3>
+
+                    <div class="news-summary">
+                        Investors are assessing the potential impact of new federal policy discussions on financial markets.
+                    </div>
+
+                    <div class="news-date">
+                        August 11, 2026
+                    </div>
+
                 </div>
+
             </article>
 
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Politics</div>
-                    <h3>Congressional Leaders Prepare for Key Negotiations</h3>
-                    <p>Lawmakers prepare for another round of negotiations on Capitol Hill.</p>
+
+            <article class="news-card">
+
+                <div class="news-image"></div>
+
+                <div class="news-content">
+
+                    <div class="news-category">
+                        BUSINESS
+                    </div>
+
+                    <h3 class="news-title">
+                        American Businesses Prepare for a Changing Economic Environment
+                    </h3>
+
+                    <div class="news-summary">
+                        Companies across the United States are adjusting their strategies as economic conditions continue to evolve.
+                    </div>
+
+                    <div class="news-date">
+                        August 11, 2026
+                    </div>
+
                 </div>
+
             </article>
 
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Politics</div>
-                    <h3>States Take Different Approaches to National Issues</h3>
-                    <p>State governments continue to pursue different policy priorities across the country.</p>
+
+            <article class="news-card">
+
+                <div class="news-image"></div>
+
+                <div class="news-content">
+
+                    <div class="news-category">
+                        POLICY
+                    </div>
+
+                    <h3 class="news-title">
+                        Economic Policy Becomes a Major Focus in Washington
+                    </h3>
+
+                    <div class="news-summary">
+                        Federal policymakers are debating measures that could influence employment, investment and economic growth.
+                    </div>
+
+                    <div class="news-date">
+                        August 11, 2026
+                    </div>
+
                 </div>
+
             </article>
+
 
         </div>
 
     </section>
-
-
-    <!-- MILITARY -->
-
-    <section class="section" id="military">
-
-        <div class="section-title">
-            <h2>Military</h2>
-            <a href="#">View All →</a>
-        </div>
-
-        <div class="news-grid">
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Military</div>
-                    <h3>U.S. Defense Officials Discuss Strategic Priorities</h3>
-                    <p>Defense officials outline priorities amid changing security conditions.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Military</div>
-                    <h3>Pentagon Reviews Emerging Security Challenges</h3>
-                    <p>Officials assess developments affecting U.S. national security.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Military</div>
-                    <h3>Defense Spending Remains a Major Washington Issue</h3>
-                    <p>Budget priorities remain a central issue in the national security debate.</p>
-                </div>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- SOCIETY -->
-
-    <section class="section" id="society">
-
-        <div class="section-title">
-            <h2>Society</h2>
-            <a href="#">View All →</a>
-        </div>
-
-        <div class="news-grid">
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Society</div>
-                    <h3>Communities Across the U.S. Face Changing Social Conditions</h3>
-                    <p>Local communities respond to a range of emerging social issues.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Society</div>
-                    <h3>New Developments Draw Attention Across Several States</h3>
-                    <p>Residents and officials respond to developments affecting daily life.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Society</div>
-                    <h3>Public Debate Continues Over Major Social Questions</h3>
-                    <p>New discussions are emerging around several national issues.</p>
-                </div>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- ECONOMY -->
-
-    <section class="section" id="economy">
-
-        <div class="section-title">
-            <h2>Economy</h2>
-            <a href="#">View All →</a>
-        </div>
-
-        <div class="news-grid">
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Economy</div>
-                    <h3>Markets Watch New Signals From the U.S. Economy</h3>
-                    <p>Investors and economists examine the latest economic indicators.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Economy</div>
-                    <h3>Businesses Prepare for Changes in the Economic Environment</h3>
-                    <p>Companies assess the potential impact of new developments.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Economy</div>
-                    <h3>Economic Policy Remains a Key Washington Debate</h3>
-                    <p>Officials continue to debate the direction of U.S. economic policy.</p>
-                </div>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- LAW -->
-
-    <section class="section" id="law">
-
-        <div class="section-title">
-            <h2>Law</h2>
-            <a href="#">View All →</a>
-        </div>
-
-        <div class="news-grid">
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Law</div>
-                    <h3>Federal Courts Consider Major Legal Questions</h3>
-                    <p>Several legal disputes are drawing attention from courts and the public.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Law</div>
-                    <h3>Legal Challenges Could Shape Future Policy</h3>
-                    <p>New cases could have broader implications for government policy.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Law</div>
-                    <h3>State and Federal Authorities Face New Court Battles</h3>
-                    <p>Legal disputes continue across multiple jurisdictions.</p>
-                </div>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- TECHNOLOGY -->
-
-    <section class="section" id="technology">
-
-        <div class="section-title">
-            <h2>Technology</h2>
-            <a href="#">View All →</a>
-        </div>
-
-        <div class="news-grid">
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Technology</div>
-                    <h3>Technology Companies Face New Questions About AI</h3>
-                    <p>Developments in artificial intelligence continue to reshape the technology sector.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Technology</div>
-                    <h3>U.S. Tech Industry Watches New Policy Developments</h3>
-                    <p>Technology companies monitor changes in the regulatory environment.</p>
-                </div>
-            </article>
-
-            <article class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <div class="category">Technology</div>
-                    <h3>Innovation Remains Central to the U.S. Technology Sector</h3>
-                    <p>Companies continue to invest in emerging technologies and research.</p>
-                </div>
-            </article>
-
-        </div>
-
-    </section>
-
-
-    <!-- LATEST -->
-
-    <section class="section">
-
-        <div class="section-title">
-            <h2>Latest News</h2>
-        </div>
-
-        <div class="latest">
-
-            <div class="latest-list">
-
-                <article class="latest-item">
-                    <div class="category">Politics</div>
-                    <h3>Washington Officials Prepare for Another Round of Policy Discussions</h3>
-                    <p>August 11, 2026 · 9:45 AM ET</p>
-                </article>
-
-                <article class="latest-item">
-                    <div class="category">Economy</div>
-                    <h3>Investors Examine New Economic Data From the United States</h3>
-                    <p>August 11, 2026 · 9:10 AM ET</p>
-                </article>
-
-                <article class="latest-item">
-                    <div class="category">Law</div>
-                    <h3>Federal Court Case Draws National Attention</h3>
-                    <p>August 11, 2026 · 8:35 AM ET</p>
-                </article>
-
-                <article class="latest-item">
-                    <div class="category">Technology</div>
-                    <h3>Technology Sector Watches Developments in Artificial Intelligence</h3>
-                    <p>August 11, 2026 · 8:00 AM ET</p>
-                </article>
-
-            </div>
-
-            <aside class="about-box" id="about">
-
-                <h2>About 007 Infox</h2>
-
-                <p>
-                    007 Infox is an independent news website
-                    focused on reporting and explaining important
-                    developments across the United States.
-                </p>
-
-            </aside>
-
-        </div>
-
-    </section>
-
-</div>
 
 </main>
 
 
 <footer>
 
-    <div class="container footer-inner">
+    <div class="footer-inner">
 
-        <div>
-            <div class="footer-logo">007 INFOX</div>
-            <div class="footer-text">
-                Independent U.S. News
-            </div>
+        <div class="footer-logo">
+            007 INFOX
         </div>
 
-        <div class="footer-links">
-            <a href="#">主页</a>
-            <a href="#about">关于</a>
-            <a href="#">Contact</a>
-            <span>© 2026 007 Infox</span>
+        <div class="footer-text">
+            Independent U.S. News · Politics · Military · Society · Economy · Law · Technology
         </div>
 
     </div>

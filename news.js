@@ -53,7 +53,7 @@ window.newsData = [
         id: 6,
         title: "Trump Signs New Orders Restricting Birthright Citizenship",
         date: "2026-08-07",
-        category: "trump",
+        category: "president",
         summary: "Just over a month after the Supreme Court blocked his first attempt, Trump signed two new executive orders narrowing birthright citizenship.",
         content: "<p>On August 6, President Trump signed two new executive orders aimed at restricting birthright citizenship, targeting so-called 'birth tourism' and narrowing exceptions to the 14th Amendment's guarantee of citizenship.</p><p>The first order expands categories of newborns who would not receive automatic citizenship, including children of foreign government employees, members of designated foreign terrorist organizations, and children born to women who concealed their true intent to give birth in the U.S.</p><p>The second order directs the State Department and Homeland Security to deny visas to individuals suspected of 'birth tourism' and to deport those who entered for that purpose.</p><p>The move comes just over a month after the Supreme Court ruled 6-3 that Trump's earlier blanket executive order canceling birthright citizenship was unconstitutional. Legal experts expect the new orders to face immediate court challenges as well.</p>",
         image: "./images/news-6.jpg"
@@ -71,7 +71,7 @@ window.newsData = [
         id: 8,
         title: "Appeals Court Blocks Trump's White House Ballroom Renovation",
         date: "2026-08-07",
-        category: "trump",
+        category: "president",
         summary: "A federal appeals court upheld an injunction halting Trump's multi-hundred-million-dollar White House ballroom project, calling it a matter for Congress.",
         content: "<p>The U.S. Court of Appeals for the D.C. Circuit ruled 2-1 on August 7 to uphold a lower court injunction blocking Trump's planned White House ballroom renovation—a project budgeted at hundreds of millions of dollars on the site of the former East Wing.</p><p>The court's opinion stated plainly: 'Whether to build a large White House ballroom is a decision for Congress, not the executive branch acting alone.' The ruling gives the Trump administration 14 days to appeal to the Supreme Court.</p><p>Separately, Trump ordered the demolition and reconstruction of the South Lawn helicopter pad after expressing dissatisfaction with its appearance and the slope of the lawn. Construction crews removed a 100-foot-wide granite presidential seal that had just been installed, at a cost of over $5 million funded by Lockheed Martin.</p><p>Trump fired back on Truth Social, calling the ruling 'unjust' and a 'national security threat,' arguing the ballroom includes bunker and anti-drone defenses. He vowed to take the fight to the Supreme Court.</p>",
         image: "./images/news-8.jpg"
@@ -80,7 +80,7 @@ window.newsData = [
         id: 9,
         title: "Armed Man Arrested Near Golf Course Before Trump Event",
         date: "2026-08-02",
-        category: "trump",
+        category: "president",
         summary: "An armed suspect was arrested near a Los Angeles-area golf course where Trump was scheduled to appear, with police later finding an arsenal at his home.",
         content: "<p>On August 2, Los Angeles County police arrested a man acting suspiciously at a golf course in Los Angeles County where President Trump was scheduled to appear later that evening.</p><p>Federal agents initially spotted the man taking photos and videos inside the course. Officers found a loaded magazine in his pocket and a loaded handgun with additional ammunition in his parked car. The next day, a search of his residence uncovered an arsenal: modified AR-style rifles, pistols, body armor, high-capacity magazines, notebooks containing 'concerning statements,' and two radio devices.</p><p>The suspect, whose name has not been released, is also being investigated in connection with a separate robbery case. The U.S. Secret Service coordinated with local police on the arrest.</p><p>The incident highlights ongoing security concerns surrounding Trump's public appearances, which have been a flashpoint since the two assassination attempts during his 2024 campaign.</p>",
         image: "./images/news-9.jpg"

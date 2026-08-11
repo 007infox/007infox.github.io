@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>007INFox - US News</title>
+    <!-- Logo icon for browser tab -->
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">007INFox</div>
+        <!-- Logo: clicking it returns to home -->
+        <a href="#home" class="logo-link" aria-label="007INFox - Go to Home">
+            <img src="logo.png"
+                 srcset="logo@2x.png 2x"
+                 alt="007INFox"
+                 class="logo-img">
+        </a>
         <nav id="main-nav">
             <ul>
                 <li><a href="#home">Home</a></li>

@@ -28,21 +28,30 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.8rem 2rem;
+    padding: 0.6rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
     flex-wrap: wrap;
 }
-.logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #fff;
+
+/* Logo: image + clickable link back to home */
+.logo-link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    padding: 0.2rem 0;
 }
-.logo span {
-    color: #c62828;
+.logo-img {
+    height: 48px;          /* comfortable header height */
+    width: auto;
+    display: block;
+    transition: opacity 0.2s;
 }
+.logo-link:hover .logo-img {
+    opacity: 0.85;         /* subtle hover feedback */
+}
+
 #main-nav ul {
     display: flex;
     gap: 1.2rem;
@@ -210,7 +219,10 @@ footer {
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
     header {
-        padding: 0.8rem 1rem;
+        padding: 0.6rem 1rem;
+    }
+    .logo-img {
+        height: 40px;       /* slightly smaller on mobile */
     }
     .menu-toggle {
         display: block;
